@@ -67,3 +67,4 @@ export default tseslint.config([
   },
 ])
 ```
+npx create-next-app@latest cartolinks --typescript

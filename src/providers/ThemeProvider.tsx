@@ -1,10 +1,9 @@
-
-
-
 import React, { useEffect, useState } from "react";
 import { ThemeContext } from "./theme-context";
 
-export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [dark, setDark] = useState(false);
 
   // ✅ Toggle function
@@ -37,7 +36,9 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       }
     } else {
       // only check system preference once, on first load
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
       setDark(prefersDark);
 
       if (prefersDark) {
@@ -54,4 +55,3 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     </ThemeContext.Provider>
   );
 };
-

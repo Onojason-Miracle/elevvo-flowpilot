@@ -28,10 +28,7 @@
 
 // export default ThemeToggle;
 
-
 // mmmmmmmmmmmmmmmmm
-
-
 
 import React from "react";
 import { Moon, Sun } from "lucide-react";
@@ -42,23 +39,27 @@ interface ThemeToggleProps {
   size?: "sm" | "md" | "lg";
 }
 
-const ThemeToggle: React.FC<ThemeToggleProps> = ({ withLabel = false, size = "sm" }) => {
+const ThemeToggle: React.FC<ThemeToggleProps> = ({
+  withLabel = false,
+  size = "sm",
+}) => {
   const { dark, toggleTheme } = useTheme();
 
-  const sizeClasses =
-    size === "sm"
-      ? "p-1"
-      : size === "md"
-      ? "p-2"
-      : "p-3";
+  const sizeClasses = size === "sm" ? "p-1" : size === "md" ? "p-2" : "p-3";
 
   return (
     <button
       onClick={toggleTheme}
       className={`inline-flex items-center gap-2 rounded-xl border border-zinc-300 bg-white dark:border-zinc-700 dark:bg-zinc-900 shadow-sm transition hover:shadow ${sizeClasses}`}
     >
-      {dark ? <Sun className="h-5 w-5 text-yellow-400" /> : <Moon className="h-5 w-5 text-zinc-700" />}
-      {withLabel && <span className="text-sm">{dark ? "Light Mode" : "Dark Mode"}</span>}
+      {dark ? (
+        <Sun className="h-5 w-5 text-yellow-400" />
+      ) : (
+        <Moon className="h-5 w-5 text-zinc-700" />
+      )}
+      {withLabel && (
+        <span className="text-sm">{dark ? "Light Mode" : "Dark Mode"}</span>
+      )}
     </button>
   );
 };

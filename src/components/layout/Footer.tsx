@@ -1,4 +1,3 @@
-
 import React from "react";
 import Container from "../ui/Container";
 import { Rocket } from "lucide-react";
@@ -11,13 +10,23 @@ const Footer: React.FC = () => (
           <Rocket className="h-5 w-5" />
         </span>
         <span className="font-semibold">FlowPilot</span>
-        <span className="text-zinc-500 dark:text-zinc-400">© {new Date().getFullYear()}</span>
+        <span className="text-zinc-500 dark:text-zinc-400">
+          © {new Date().getFullYear()}
+        </span>
       </div>
       <div className="flex flex-wrap items-center gap-4 text-zinc-600 dark:text-zinc-400">
-        <a href="#features" className="hover:underline">Features</a>
-        <a href="#pricing" className="hover:underline">Pricing</a>
-        <a href="#" className="hover:underline">Docs</a>
-        <a href="#" className="hover:underline">Privacy</a>
+        <a href="#features" className="hover:underline">
+          Features
+        </a>
+        <a href="#pricing" className="hover:underline">
+          Pricing
+        </a>
+        <a href="#" className="hover:underline">
+          Docs
+        </a>
+        <a href="#" className="hover:underline">
+          Privacy
+        </a>
       </div>
     </Container>
   </footer>

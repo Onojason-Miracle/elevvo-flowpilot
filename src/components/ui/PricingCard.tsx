@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Check } from "lucide-react";
 
@@ -11,11 +10,20 @@ interface Props {
   highlight?: boolean;
 }
 
-const PricingCard: React.FC<Props> = ({ plan, price, period, features, cta, highlight = false }) => (
+const PricingCard: React.FC<Props> = ({
+  plan,
+  price,
+  period,
+  features,
+  cta,
+  highlight = false,
+}) => (
   <div
     className={
       "relative rounded-3xl border p-6 shadow-sm dark:border-zinc-800 " +
-      (highlight ? "border-indigo-300 ring-2 ring-indigo-400/50 dark:border-indigo-700/40" : "border-zinc-200")
+      (highlight
+        ? "border-indigo-300 ring-2 ring-indigo-400/50 dark:border-indigo-700/40"
+        : "border-zinc-200")
     }
   >
     {highlight && (

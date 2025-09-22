@@ -1,4 +1,3 @@
-
 import React from "react";
 import Container from "../ui/Container";
 import TestimonialCard from "../ui/TestimonialCard";
@@ -7,7 +6,9 @@ const Testimonials: React.FC = () => (
   <section id="testimonials" className="py-20 bg-white/60 dark:bg-zinc-900/40">
     <Container>
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold">Teams are shipping faster with FlowPilot</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold">
+          Teams are shipping faster with FlowPilot
+        </h2>
       </div>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

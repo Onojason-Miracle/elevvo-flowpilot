@@ -1,47 +1,62 @@
 import "./index.css";
 import React from "react";
+import { Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/layout/Navbar";
-import Hero from "./components/sections/Hero";
-import Features from "./components/sections/Features";
-import Testimonials from "./components/sections/Testimonials";
-import Pricing from "./components/sections/Pricing";
-import CTA from "./components/sections/CTA";
+import Home from "./components/sections/Home";
+import Dashboard from "./components/Dashboard";
 import Footer from "./components/layout/Footer";
-import { ThemeProvider } from "./providers/ThemeProvider";
+
+import Register from "./components/sections/Register";
+import Login from "./components/sections/Login";
+import { AuthProvider } from "./context/AuthContext";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 
 const App: React.FC = () => {
   return (
-    <ThemeProvider>
-      <div className="min-h-screen bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
-        <Navbar />
-        <Hero />
-        <Features />
-        <Testimonials />
-        <Pricing />
-        <CTA />
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <div className="min-h-screen bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+      <Navbar />
+      <AuthProvider>
+        <Routes>
+          {/* Landing page */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Home />
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              </>
+            }
+          />
+
+          {/* Auth pages */}
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </AuthProvider>
+
+      <Footer />
+    </div>
   );
 };
 
 export default App;
 
+// import { Routes, Route } from "react-router-dom";
+
+// import Register from "./components/sections/Register";
+
 // function App() {
 //   return (
+//     <>
 
-// <div className="p-4 bg-red-500 dark:bg-green-500">
-//   TEST BOX
-// </div>
-
-//     <div className="h-screen flex items-center justify-center bg-blue-800">
-//       <h1 className="text-white text-4xl font-bold">
-//        Miracle Tailwind is working! 🎉
-//       </h1>
-
-//       <div className="text-black">Test</div>
-
-//     </div>
+//       <Routes>
+//         <Route path="/" element={<h1 className="p-8">Home Page Works ✅</h1>} />
+//         <Route path="/register" element={<Register />} />
+//       </Routes>
+//     </>
 //   );
 // }
 

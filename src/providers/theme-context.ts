@@ -1,4 +1,3 @@
-
 // import { createContext } from "react";
 
 // export interface ThemeContextValue {
@@ -7,7 +6,6 @@
 // }
 
 // export const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
-
 
 import { createContext, useContext } from "react";
 
@@ -21,4 +19,3 @@ export const useTheme = () => {
   if (!ctx) throw new Error("useTheme must be used within ThemeProvider");
   return ctx;
 };
-
