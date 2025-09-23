@@ -129,7 +129,7 @@ function Register() {
 
           <button
             type="submit"
-            className="w-full p-3 rounded-lg bg-gradient-to-tr from-indigo-600 via-violet-600 to-fuchsia-600 text-white"
+            className="w-full p-3 rounded-lg bg-gradient-to-tr from-indigo-600 via-violet-600 to-fuchsia-600 text-white cursor:pointer;"
           >
             Register
           </button>
@@ -137,7 +137,7 @@ function Register() {
 
         <button
           onClick={handleGoogleSignIn}
-          className="w-full mt-8 p-3 rounded-lg border flex items-center justify-center gap-2 hover:bg-gray-100 transition hover:text-zinc-900"
+          className="w-full mt-8 p-3 rounded-lg border flex items-center justify-center gap-2 hover:bg-gray-100 transition hover:text-zinc-900 cursor: pointer;"
         >
           <img
             src="https://www.svgrepo.com/show/355037/google.svg"

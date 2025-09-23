@@ -2,6 +2,10 @@
 @import "tailwindcss";
 
 /* @import "tailwindcss"; */
+.width{
+    width: 90%;
+    margin: auto;
+}
 
 
 

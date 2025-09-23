@@ -15,27 +15,26 @@ import { ProtectedRoute } from "./components/ProtectedRoute";
 const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+        <AuthProvider>
       <Navbar />
-      <AuthProvider>
-        <Routes>
-          {/* Landing page */}
-          <Route
-            path="/"
-            element={
-              <>
-                <Home />
-                <ProtectedRoute>
-                  <Dashboard />
-                </ProtectedRoute>
-              </>
-            }
-          />
+    
+  <Routes>
+    {/* Public routes */}
+    <Route path="/" element={<Home />} />
+    <Route path="/register" element={<Register />} />
+    <Route path="/login" element={<Login />} />
 
-          {/* Auth pages */}
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-        </Routes>
-      </AuthProvider>
+    {/* Protected routes */}
+    <Route
+      path="/dashboard"
+      element={
+        <ProtectedRoute>
+          <Dashboard />
+        </ProtectedRoute>
+      }
+    />
+  </Routes>
+</AuthProvider>
 
       <Footer />
     </div>

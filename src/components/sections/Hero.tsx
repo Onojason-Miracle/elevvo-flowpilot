@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
             </h1>
             <p className="mt-4 text-lg text-zinc-700 dark:text-zinc-300">
               FlowPilot is an AI workflow co‑pilot that turns repetitive tasks
-              into streamlined automations—so your team ships faster with fewer
+              into streamlined automations so your team ships faster with fewer
               clicks.
             </p>
 
@@ -52,6 +52,8 @@ const Hero: React.FC = () => {
                 2‑minute setup
               </div>
             </div> */}
+
+            
           </div>
 
           <div className="relative">

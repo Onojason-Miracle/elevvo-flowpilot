@@ -3,10 +3,12 @@ import { auth, googleProvider } from "@lib/firebase";
 import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
+import { Eye, EyeOff } from "lucide-react";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   // useNavigate hook for programmatic navigation
@@ -57,20 +59,38 @@ function Login() {
             className="w-full p-3 border rounded-lg"
             required
           />
-          <input
+          {/* <input
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="w-full p-3 border rounded-lg"
             required
-          />
+          /> */}
+
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full p-3 border rounded-lg pr-10"
+              required
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute inset-y-0 right-3 flex items-center text-zinc-500"
+            >
+              {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+            </button>
+          </div>
 
           {error && <p className="text-red-500 text-sm">{error}</p>}
 
           <button
             type="submit"
-            className="w-full p-3 rounded-lg bg-gradient-to-tr from-indigo-600 via-violet-600 to-fuchsia-600 text-white"
+            className="w-full p-3 rounded-lg bg-gradient-to-tr from-indigo-600 via-violet-600 to-fuchsia-600 text-white cursor: pointer;"
           >
             Login
           </button>
@@ -78,7 +98,7 @@ function Login() {
 
         <button
           onClick={handleGoogleSignIn}
-          className="w-full mt-4 p-3 rounded-lg border flex items-center justify-center gap-2 hover:bg-gray-100 hover:text-zinc-900 transition"
+          className="w-full mt-4 p-3 rounded-lg border flex items-center justify-center gap-2 hover:bg-gray-100 hover:text-zinc-900 transition cursor: pointer;"
         >
           <img
             src="https://www.svgrepo.com/show/355037/google.svg"

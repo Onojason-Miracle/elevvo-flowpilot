@@ -1,31 +1,25 @@
 // src/pages/Dashboard.tsx
-import { signOut } from "firebase/auth";
-import { auth } from "../lib/firebase";
+// import { signOut } from "firebase/auth";
+// import { auth } from "../lib/firebase";
 import { useAuth } from "../context/AuthContext";
 
 export default function Dashboard() {
   const { user } = useAuth();
 
-  const handleLogout = async () => {
-    await signOut(auth);
-  };
+  // const handleLogout = async () => {
+  //   await signOut(auth);
+  // };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <header className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold bg-gradient-to-tr from-indigo-600 via-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
+    <div className=" w-[90%] mx-auto min-h-screen bg-zinc-50 text-zinc-900 mt-8 dark:bg-zinc-950 dark:text-zinc-100p-6">
+      <header className="  mb-6">
+        <h1 className="text-3xl font-bold bg-gradient-to-tr from-indigo-600 via-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
           Flow Pilot Dashboard
         </h1>
-        <button
-          onClick={handleLogout}
-          className="px-4 py-2 bg-red-500 text-white rounded-lg shadow hover:bg-red-600 transition"
-        >
-          Logout
-        </button>
       </header>
 
       <main>
-        <h2 className="text-lg font-medium mb-4">
+        <h2 className="text-2xl font-medium mb-4  dark:text-zinc-100 mt-8">
           Welcome, {user?.displayName || user?.email}
         </h2>
 

@@ -22,7 +22,8 @@
       "@components/*": ["components/*"],
       "@hooks/*": ["hooks/*"],
       "@lib/*": ["lib/*"],
-      "@providers/*": ["providers/*"]
+      "@providers/*": ["providers/*"],
+      "@context/*": ["context/*"]
     },
 
     /* Linting */
